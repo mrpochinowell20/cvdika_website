@@ -14,7 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $active = 'home';
+    return view('home', compact('active'));
+});
+
+Route::get('/products', function () {
+    $active = 'products';
+    return view('products', compact('active'));
 });
 
 Route::get('/login', function() {
