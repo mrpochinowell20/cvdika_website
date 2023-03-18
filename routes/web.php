@@ -23,6 +23,11 @@ Route::get('/products', function () {
     return view('products', compact('active'));
 });
 
+Route::get('/about', function () {
+    $active = 'about';
+    return view('about', compact('active'));
+});
+
 Route::get('/login', function() {
     return view('login');
 })->name('login');

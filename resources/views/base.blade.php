@@ -27,7 +27,7 @@
                 <a href="/products/#" class="block text-lg pr-4 rounded bg-transparent <?php echo $active == 'products' ? 'text-cyan-500' : 'text-gray-700' ?> p-0">PRODUCT</a>
             </li>
             <li>
-                <a href="#" class="block text-lg pr-4 rounded bg-transparent <?php echo $active == 'about' ? 'text-cyan-500' : 'text-gray-700' ?> p-0">ABOUT</a>
+                <a href="/about/#" class="block text-lg pr-4 rounded bg-transparent <?php echo $active == 'about' ? 'text-cyan-500' : 'text-gray-700' ?> p-0">ABOUT</a>
             </li>
             </ul>
         </div>
@@ -48,7 +48,7 @@
                         <a href="/products/#" class="mr-4 hover:underline md:mr-6">Product</a>
                     </li>
                     <li>
-                        <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+                        <a href="/about/#" class="mr-4 hover:underline md:mr-6 ">About</a>
                     </li>
                 </ul>
             </div>
