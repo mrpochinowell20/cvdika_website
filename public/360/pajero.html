@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+        body {
+            margin: 0
+        }
+        .mySlides {
+            display: none
+        }
+        img {
+            vertical-align: middle;
+        }
+        .slideshow-container {
+            width: 100%;
+            position: relative;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container" onmousemove="mouseMove(event)">
+        <div class="mySlides"><img src="pajero/01.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/02.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/03.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/04.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/05.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/06.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/07.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/08.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/09.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/10.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/11.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/12.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/13.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/14.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/15.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/16.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/17.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/18.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/19.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/20.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/21.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/22.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/23.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/24.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/25.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/26.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/27.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/28.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/29.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/30.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/31.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/32.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/33.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/34.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/35.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/36.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/37.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/38.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/39.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/40.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/41.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/42.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/43.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/44.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/45.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/46.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/47.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/48.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/49.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/50.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/51.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/52.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/53.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/54.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/55.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/56.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/57.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/58.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/59.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/60.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/61.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/62.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/63.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/64.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/65.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/66.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/67.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/68.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/69.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/70.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/71.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/72.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/73.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/74.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/75.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/76.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/77.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/78.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/79.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/80.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/81.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/82.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/83.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/84.jpg" style="width:100%"></div>
+    </div>
+    <script>
+        var direction = "";
+        var oldx = 0;
+        function mouseMove(e) {
+                if (e.pageX < oldx) {
+                    direction = "left"
+                    plusSlides(-1)
+                } else if (e.pageX > oldx) {
+                    direction = "right"
+                    plusSlides(1)
+                }
+                oldx = e.pageX;
+                console.log(direction)
+
+        }
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+            setTimeout(console.log(), 1000)
+        }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+</html>

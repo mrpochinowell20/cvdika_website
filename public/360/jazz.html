@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+        body {
+            margin: 0
+        }
+        .mySlides {
+            display: none
+        }
+        img {
+            vertical-align: middle;
+        }
+        .slideshow-container {
+            width: 100%;
+            position: relative;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container" onmousemove="mouseMove(event)">
+        <div class="mySlides"><img src="jazz/01.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/02.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/03.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/04.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/05.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/06.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/07.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/08.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/09.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/10.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/11.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/12.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/13.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/14.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/15.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/16.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/17.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/18.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/19.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/20.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/21.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/22.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/23.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/24.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/25.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/26.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/27.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/28.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/29.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/30.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/31.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/32.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/33.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/34.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/35.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/36.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/37.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/38.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/39.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/40.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/41.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/42.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/43.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/44.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/45.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/46.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/47.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/48.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/49.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/50.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/51.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/52.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/53.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/54.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/55.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/56.jpg" style="width:100%"></div>
+    </div>
+    <script>
+        var direction = "";
+        var oldx = 0;
+        function mouseMove(e) {
+                if (e.pageX < oldx) {
+                    direction = "left"
+                    plusSlides(-1)
+                } else if (e.pageX > oldx) {
+                    direction = "right"
+                    plusSlides(1)
+                }
+                oldx = e.pageX;
+                console.log(direction)
+
+        }
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+            setTimeout(console.log(), 1000)
+        }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+</html>

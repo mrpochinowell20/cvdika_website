@@ -3,6 +3,9 @@
 /public/storage
 /storage/*.key
 /vendor
+/public/360/avanza
+/public/360/jazz
+/public/360/pajero
 .env
 .env.backup
 .phpunit.result.cache

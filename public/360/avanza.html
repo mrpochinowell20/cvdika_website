@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+        body {
+            margin: 0
+        }
+        .mySlides {
+            display: none
+        }
+        img {
+            vertical-align: middle;
+        }
+        .slideshow-container {
+            width: 100%;
+            position: relative;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container" onmousemove="mouseMove(event)">
+        <div class="mySlides"><img src="avanza/01.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/02.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/03.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/04.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/05.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/06.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/07.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/08.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/09.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/10.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/11.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/12.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/13.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/14.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/15.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/16.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/17.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/18.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/19.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/20.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/21.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/22.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/23.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/24.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/25.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/26.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/27.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/28.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/29.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/30.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/31.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/32.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/33.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/34.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/35.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/36.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/37.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/38.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/39.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/40.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/41.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/42.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/43.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/44.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/45.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/46.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/47.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/48.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/49.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/50.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/51.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/52.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/53.jpeg" style="width:100%"></div>
+    </div>
+    <script>
+        var direction = "";
+        var oldx = 0;
+        function mouseMove(e) {
+                if (e.pageX < oldx) {
+                    direction = "left"
+                    plusSlides(-1)
+                } else if (e.pageX > oldx) {
+                    direction = "right"
+                    plusSlides(1)
+                }
+                oldx = e.pageX;
+                console.log(direction)
+
+        }
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+            setTimeout(console.log(), 1000)
+        }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+</html>
