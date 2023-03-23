@@ -78,7 +78,7 @@
                   </div>
             </div>
             <div>
-                <form action="{{ route('auth_login') }}" method="post">
+                <form action="{{ route('auth-login') }}" method="post">
                     <div class="grid grid-cols-1 px-8 py-20 bg-white rounded-r-xl">
                         <h1 class="text-3xl font-bold mb-4">Sign In</h1>
                         <input type="text" name="username" placeholder="Username" class="border-b-2 border-cyan-500 focus:outline-none font-semibold placeholder:font-normal text-lg px-1 py-2 mb-4">
