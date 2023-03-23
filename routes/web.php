@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,21 +15,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::prefix('admin')->name('admin.')->middleware('login')->group(function() {
+    Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/user-management', [AdminController::class, 'userManagement'])->name('user-management');
+});
+
+
 Route::get('/', function () {
     $active = 'home';
     return view('home', compact('active'));
 });
 
-Route::get('/products', function () {
+Route::get('products', function () {
     $active = 'products';
     return view('products', compact('active'));
 });
 
-Route::get('/about', function () {
+Route::get('about', function () {
     $active = 'about';
     return view('about', compact('active'));
 });
 
-Route::get('/login', function() {
-    return view('login');
-})->name('login');
+Route::get('login', [LoginController::class, 'login'])->name('login');
+Route::post('login', [LoginController::class, 'authLogin'])->name('auth_login');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');

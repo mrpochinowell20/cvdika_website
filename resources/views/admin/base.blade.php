@@ -28,7 +28,7 @@
 	<div class="wrapper">
 		<div class="main-header">
 			<div class="logo-header" data-background-color="blue2">
-				<a href="#" class="logo" style="color: white">
+				<a href="{{ route('admin.dashboard') }}" class="logo" style="color: white">
 					<b>ADMIN PAGE</b>
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,9 +58,9 @@
 										<div class="user-box">
 											<div class="avatar-lg"><img src="{{ asset('Atlantis/img/Profile.png') }}" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
-												<h4>Admin</h4>
+                                                <h4>{{ Session::get('name') }}</h4>
 												<a href="#" class="btn btn-xs btn-warning btn-sm mb-2">Ganti Password</a>
-												<a href="#" class="btn btn-xs btn-danger btn-sm mb-2">Log Out</a>
+												<a href="{{ route('logout') }}" class="btn btn-xs btn-danger btn-sm mb-2">Log Out</a>
 											</div>
 										</div>
 									</li>
@@ -81,7 +81,8 @@
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									<b class="mt-2">Admin</b>
+									<b>{{ Session::get('name') }}</b>
+									{{ Session::get('level') }}
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -94,7 +95,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="{{ route('logout') }}">
 											<span class="link-collapse">Log Out</span>
 										</a>
 									</li>
@@ -104,7 +105,7 @@
 					</div>
 					<ul class="nav nav-primary">
 						<li class="nav-item active">
-							<a href="#" class="collapsed" aria-expanded="false">
+							<a href="{{ route('admin.dashboard') }}" class="collapsed" aria-expanded="false">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
 							</a>
@@ -146,7 +147,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#">
+							<a href="{{ route('admin.user-management') }}">
 								<i class="fas fa-user"></i>
 								<p>User Management</p>
 							</a>
