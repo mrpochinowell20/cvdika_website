@@ -37,5 +37,5 @@ Route::get('about', function () {
 });
 
 Route::get('login', [LoginController::class, 'login'])->name('login');
-Route::post('login', [LoginController::class, 'authLogin'])->name('auth_login');
+Route::post('login', [LoginController::class, 'authLogin'])->name('auth-login');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
