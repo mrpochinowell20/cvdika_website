@@ -59,7 +59,7 @@
 											<div class="avatar-lg"><img src="{{ asset('Atlantis/img/Profile.png') }}" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
                                                 <h4>{{ Session::get('name') }}</h4>
-												<a href="#" class="btn btn-xs btn-warning btn-sm mb-2">Ganti Password</a>
+												<a href="{{ route('change-password') }}" class="btn btn-xs btn-warning btn-sm mb-2">Change Password</a>
 												<a href="{{ route('logout') }}" class="btn btn-xs btn-danger btn-sm mb-2">Log Out</a>
 											</div>
 										</div>
@@ -90,8 +90,8 @@
 							<div class="collapse in" id="collapseExample">
 								<ul class="nav">
 									<li>
-										<a href="#">
-											<span class="link-collapse">Ganti Password</span>
+										<a href="{{ route('change-password') }}">
+											<span class="link-collapse">Change Password</span>
 										</a>
 									</li>
 									<li>

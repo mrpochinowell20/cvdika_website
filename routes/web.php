@@ -42,3 +42,5 @@ Route::get('about', function () {
 Route::get('login', [LoginController::class, 'login'])->name('login');
 Route::post('login', [LoginController::class, 'authLogin'])->name('auth-login');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('change-password', [LoginController::class, 'changePassword'])->name('change-password');
+Route::put('change-password', [LoginController::class, 'authChangePassword'])->name('auth-change-password');
