@@ -125,6 +125,7 @@
             </div>
             <div class="p-6 space-y-6">
                 <iframe class="w-full" src="../360/pajero.html" height="80%"></iframe>
+                <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, magni.</p>
             </div>
         </div>
     </div>
@@ -143,6 +144,7 @@
             </div>
             <div class="p-6 space-y-6">
                 <iframe class="w-full" src="../360/jazz.html" height="80%"></iframe>
+                <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, magni.</p>
             </div>
         </div>
     </div>
@@ -161,6 +163,7 @@
             </div>
             <div class="p-6 space-y-6">
                 <iframe class="w-full" src="../360/avanza.html" height="80%"></iframe>
+                <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, magni.</p>
             </div>
         </div>
     </div>

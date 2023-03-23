@@ -14,67 +14,64 @@
     </div>
     <br>
     <h3 class="text-2xl mb-1">Galery</h3>
-    <div class="grid grid-cols-5 w-[90%] gap-2">
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
+    <center>
+
+        <div class="grid grid-cols-5 w-[90%] gap-2">
+            <div class="w-full bg-slate-300">
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="w-full bg-slate-300">
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="w-full bg-slate-300">
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="w-full bg-slate-300">
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="w-full bg-slate-300">
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="w-full bg-slate-300">
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="w-full bg-slate-300">
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="w-full bg-slate-300">
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="w-full bg-slate-300">
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
         </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-    </div>
+    </center>
 </center>
 @endsection
