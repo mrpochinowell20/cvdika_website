@@ -82,7 +82,7 @@
                     <div class="grid grid-cols-1 px-8 py-20 bg-white rounded-r-xl">
                         <h1 class="text-3xl font-bold mb-4">Sign In</h1>
                         <input type="text" name="username" placeholder="Username" class="border-b-2 border-cyan-500 focus:outline-none font-semibold placeholder:font-normal text-lg px-1 py-2 mb-4">
-                        <input type="text" name="password" placeholder="Password" class="border-b-2 border-cyan-500 focus:outline-none font-semibold placeholder:font-normal text-lg px-1 py-2 mb-10">
+                        <input type="password" name="password" placeholder="Password" class="border-b-2 border-cyan-500 focus:outline-none font-semibold placeholder:font-normal text-lg px-1 py-2 mb-10">
                         <button class="w-full bg-gradient-to-r from-cyan-500 to-purple-500 text-lg py-2 text-white">CONTINUE</button>
                     </div>
                 </form>

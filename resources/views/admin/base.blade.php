@@ -116,12 +116,14 @@
 							</span>
 							<h4 class="text-section">Menu</h4>
 						</li>
+                        @if (Session::get('level') == 'Super Admin')
 						<li class="nav-item">
 							<a href="#">
 								<i class="fas fa-image"></i>
 								<p>Galery</p>
 							</a>
 						</li>
+                        @endif
 						<li class="nav-item">
 							<a href="#">
 								<i class="fas fa-car"></i>
@@ -140,6 +142,7 @@
 								<p>Data Produk Keluar</p>
 							</a>
 						</li>
+                        @if (Session::get('level') == 'Super Admin')
 						<li class="nav-item">
 							<a href="#">
 								<i class="fas fa-store"></i>
@@ -152,6 +155,7 @@
 								<p>User Management</p>
 							</a>
 						</li>
+                        @endif
 					</ul>
 				</div>
 			</div>

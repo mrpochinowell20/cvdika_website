@@ -18,6 +18,9 @@ use App\Http\Controllers\LoginController;
 Route::prefix('admin')->name('admin.')->middleware('login')->group(function() {
     Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/user-management', [AdminController::class, 'userManagement'])->name('user-management');
+    Route::post('/user-management', [AdminController::class, 'createUser'])->name('create-user');
+    Route::put('/user-management', [AdminController::class, 'updateUser'])->name('update-user');
+    Route::delete('/user-management', [AdminController::class, 'deleteUser'])->name('delete-user');
 });
 
 
