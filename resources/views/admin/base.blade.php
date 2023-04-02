@@ -125,19 +125,19 @@
 						</li>
                         @endif
 						<li class="nav-item">
-							<a href="#">
+							<a href="{{ route('admin.product') }}">
 								<i class="fas fa-car"></i>
 								<p>Data Produk</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#">
+							<a href="{{ route('admin.in-product') }}">
 								<i class="fas fa-cart-plus"></i>
 								<p>Data Produk Masuk</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#">
+							<a href="{{ route('admin.out-product') }}">
 								<i class="fas fa-cart-arrow-down"></i>
 								<p>Data Produk Keluar</p>
 							</a>

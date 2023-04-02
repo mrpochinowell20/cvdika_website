@@ -21,6 +21,13 @@ Route::prefix('admin')->name('admin.')->middleware('login')->group(function() {
     Route::post('/user-management', [AdminController::class, 'createUser'])->name('create-user');
     Route::put('/user-management', [AdminController::class, 'updateUser'])->name('update-user');
     Route::delete('/user-management', [AdminController::class, 'deleteUser'])->name('delete-user');
+    Route::get('/product', [AdminController::class, 'product'])->name('product');
+    Route::put('/product', [AdminController::class, 'updateProduct'])->name('update-product');
+    Route::get('/in-product', [AdminController::class, 'inProduct'])->name('in-product');
+    Route::post('/in-product', [AdminController::class, 'createInProduct'])->name('create-in-product');
+    Route::put('/in-product', [AdminController::class, 'updateInProduct'])->name('update-in-product');
+    Route::delete('/in-product', [AdminController::class, 'deleteInProduct'])->name('delete-in-product');
+    Route::get('/out-product', [AdminController::class, 'outProduct'])->name('out-product');
 });
 
 
