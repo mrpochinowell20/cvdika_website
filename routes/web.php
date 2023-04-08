@@ -28,6 +28,10 @@ Route::prefix('admin')->name('admin.')->middleware('login')->group(function() {
     Route::put('/in-product', [AdminController::class, 'updateInProduct'])->name('update-in-product');
     Route::delete('/in-product', [AdminController::class, 'deleteInProduct'])->name('delete-in-product');
     Route::get('/out-product', [AdminController::class, 'outProduct'])->name('out-product');
+    Route::get('/city', [AdminController::class, 'city'])->name('city');
+    Route::post('/city', [AdminController::class, 'createCity'])->name('create-city');
+    Route::put('/city', [AdminController::class, 'updateCity'])->name('update-city');
+    Route::delete('/city', [AdminController::class, 'deleteCity'])->name('delete-city');
 });
 
 

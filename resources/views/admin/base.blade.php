@@ -144,9 +144,9 @@
 						</li>
                         @if (Session::get('level') == 'Super Admin')
 						<li class="nav-item">
-							<a href="#">
+							<a href="{{ route('admin.city') }}">
 								<i class="fas fa-store"></i>
-								<p>Data Company</p>
+								<p>Data Kota</p>
 							</a>
 						</li>
 						<li class="nav-item">

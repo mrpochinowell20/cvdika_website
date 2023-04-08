@@ -46,22 +46,23 @@ class AdminController extends Controller
         $products = DB::table('products')->get();
         return view('admin.product', compact('products'));
     }
-    public function inProduct() {
-        $inProducts = DB::table('products')
-                        ->where('range_sold', NULL)
-                        ->get();
-        return view('admin.in-product', compact('inProducts'));
-    }
     public function updateProduct(Request $req) {
         $tanggal = explode('-', $req->date_out);
         DB::table('products')
             ->where('id', $req->id)
             ->update([
                 'range_sold' => $req->range_sold,
-                'locations' => $req->locations,
                 'date_out' => mktime(12, 0, 0, $tanggal[1], $tanggal[2], $tanggal[0]),
             ]);
         return back();
+    }
+    public function inProduct() {
+        $inProducts = DB::table('products')
+                        ->where('range_sold', NULL)
+                        ->leftJoin('citys', 'products.locations', '=', 'citys.id')
+                        ->get();
+        $citys = DB::table('citys')->get();
+        return view('admin.in-product', compact('inProducts', 'citys'));
     }
     public function createInProduct(Request $req) {
         $tanggal = explode('-', $req->date_in);
@@ -77,6 +78,7 @@ class AdminController extends Controller
                 'description' => $req->description,
                 'range_ori' => $req->range_ori,
                 'conditions' => $req->conditions,
+                'locations' => $req->city,
                 'date_in' => mktime(12, 0, 0, $tanggal[1], $tanggal[2], $tanggal[0]),
             ]);
         return back();
@@ -92,6 +94,7 @@ class AdminController extends Controller
                 'description' => $req->description,
                 'range_ori' => $req->range_ori,
                 'conditions' => $req->conditions,
+                'locations' => $req->city,
                 'date_in' => mktime(12, 0, 0, $tanggal[1], $tanggal[2], $tanggal[0]),
             ]);
         return back();
@@ -108,5 +111,33 @@ class AdminController extends Controller
                         ->where('range_sold', '!=', NULL)
                         ->get();
         return view('admin.out-product', compact('outProducts'));
+    }
+    public function city() {
+        $citys = DB::table('citys')->get();
+        return view('admin.city', compact('citys'));
+    }
+    public function createCity(Request $req) {
+        DB::table('citys')
+            ->insert([
+                'city' => $req->city
+            ]);
+        return back();
+    }
+    public function updateCity(Request $req) {
+        DB::table('citys')
+            ->where('id', $req->id)
+            ->update([
+                'city' => $req->city
+            ]);
+        return back();
+    }
+    public function deleteCity(Request $req) {
+        DB::table('citys')
+            ->where('id', $req->id)
+            ->delete();
+        DB::table('products')
+            ->where('locations', $req->id)
+            ->delete();
+        return back();
     }
 }

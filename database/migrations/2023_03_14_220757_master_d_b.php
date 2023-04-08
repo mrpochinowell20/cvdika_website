@@ -38,6 +38,10 @@ class MasterDB extends Migration
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
+        // Schema::create('citys', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('city');
+        // });
     }
 
     /**
@@ -49,5 +53,6 @@ class MasterDB extends Migration
     {
         // Schema::dropIfExists('users');
         Schema::dropIfExists('products');
+        // Schema::dropIfExists('citys');
     }
 }

@@ -24,6 +24,7 @@
                                 <th>Deskripsi</th>
                                 <th>Harga Beli</th>
                                 <th>Kondisi</th>
+                                <th>Kota</th>
                                 <th>Tanggal Masuk</th>
                                 <th>Action</th>
                             </tr>
@@ -40,6 +41,7 @@
                                 <td>{{ $product->description }}</td>
                                 <td>Rp.{{ number_format($product->range_ori, 2, ',', '.') }}</td>
                                 <td>{{ $product->conditions }}</td>
+                                <td>{{ $product->city }}</td>
                                 <td>{{ date('d/m/Y', $product->date_in) }}</td>
                                 <td>
                                     <button class="btn btn-link" data-toggle="modal" data-target="#update{{ $product->id }}">Update</button>
@@ -102,6 +104,12 @@
                                                             <option value="">Kondisi</option>
                                                             <option value="Baru" <?= $product->conditions == 'Baru' ? 'selected' : '' ?>>Baru</option>
                                                             <option value="Bekas" <?= $product->conditions == 'Bekas' ? 'selected' : '' ?>>Bekas</option>
+                                                        </select>
+                                                        <select name="city" class="form-control mb-2" required>
+                                                            <option value="">Kota</option>
+                                                            @foreach ($citys as $city)
+                                                            <option value="{{ $city->id }}" <?= $product->locations == $city->id ? 'selected' : '' ?>>{{ $city->city }}</option>
+                                                            @endforeach
                                                         </select>
                                                         <input type="date" class="form-control mb-2" placeholder="Tanggal Masuk" name="date_in" value="{{ date('Y-m-d', $product->date_in) }}" required>
                                                     </div>
@@ -204,6 +212,12 @@
                         <option value="">Kondisi</option>
                         <option value="Baru">Baru</option>
                         <option value="Bekas">Bekas</option>
+                    </select>
+                    <select name="city" class="form-control mb-2" required>
+                        <option value="">Kota</option>
+                        @foreach ($citys as $city)
+                        <option value="{{ $city->id }}">{{ $city->city }}</option>
+                        @endforeach
                     </select>
                     <input type="date" class="form-control mb-2" placeholder="Tanggal Masuk" name="date_in" required>
                 </div>
