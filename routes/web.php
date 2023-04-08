@@ -42,7 +42,12 @@ Route::get('/', function () {
 
 Route::get('products', function () {
     $active = 'products';
-    return view('products', compact('active'));
+    $citys = DB::table('citys')->get();
+    $products = DB::table('products')
+                    ->where('range_sold', NULL)
+                    ->leftJoin('citys', 'products.locations', '=', 'citys.id')
+                    ->get();
+    return view('products', compact('active', 'citys', 'products'));
 });
 
 Route::get('about', function () {

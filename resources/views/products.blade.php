@@ -45,69 +45,21 @@
         </button>
     </div>
     <br>
-    <h3 class="text-2xl mb-1">Product List</h3>
+    @foreach ($citys as $city)
+    <h3 class="text-2xl mb-1">Kota {{ $city->city }}</h3>
     <div class="grid grid-cols-5 w-[90%] gap-2">
+        <?php $num = 0; ?>
+        @foreach ($products as $product)
+        @if ($product->locations == $city->id)
+        <?php $num++; ?>
         <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
+            <img src="../gambar/{{ $product->image }}" width="100%">
         </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="w-full bg-slate-300">
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
+        @endif
+        @endforeach
     </div>
+    <center><b class="text-red-500"><?= $num == 0 ? 'Tidak ada mobil tersedia di kota ini' : '' ?></b></center>
+    @endforeach
 </center>
 @endsection
 
