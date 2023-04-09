@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CV DIKA LANGGENG TRIJAYA</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
 	<script src="{{ asset('Atlantis/js/plugin/webfont/webfont.min.js') }}"></script>
 	@php
 		$src = asset('Atlantis/css/fonts.min.css');
