@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 </head>
-<body class="relative">
+<body class="relative bg-[url('../bg.jpg')] bg-cover backdrop-blur">
     <nav class="bg-white border-gray-200 px-2 sm:px-4 py-1 shadow-md mb-3">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
         <a href="https://flowbite.com/" class="flex items-center">
