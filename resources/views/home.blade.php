@@ -15,62 +15,18 @@
     <br>
     <h3 class="text-2xl mb-1">Galery</h3>
     <center>
-
         <div class="grid grid-cols-5 w-[90%] gap-2">
-            <div class="w-full bg-slate-300">
+            @foreach ($galerys as $galery)
+            <div class="w-full bg-[url('../galery/{{ $galery->file }}')] bg-cover">
                 <br>
                 <br>
                 <br>
-                <br>
-            </div>
-            <div class="w-full bg-slate-300">
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
-            <div class="w-full bg-slate-300">
                 <br>
                 <br>
                 <br>
                 <br>
             </div>
-            <div class="w-full bg-slate-300">
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
-            <div class="w-full bg-slate-300">
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
-            <div class="w-full bg-slate-300">
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
-            <div class="w-full bg-slate-300">
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
-            <div class="w-full bg-slate-300">
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
-            <div class="w-full bg-slate-300">
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
+            @endforeach
         </div>
     </center>
 </center>

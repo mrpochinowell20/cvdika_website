@@ -40,7 +40,8 @@ Route::prefix('admin')->name('admin.')->middleware('login')->group(function() {
 
 Route::get('/', function () {
     $active = 'home';
-    return view('home', compact('active'));
+    $galerys = DB::table('galerys')->get();
+    return view('home', compact('active', 'galerys'));
 });
 
 Route::get('products', function () {
