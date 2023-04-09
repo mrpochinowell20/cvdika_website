@@ -140,4 +140,25 @@ class AdminController extends Controller
             ->delete();
         return back();
     }
+    public function galery() {
+        $galerys = DB::table('galerys')->get();
+        return view('admin.galery', compact('galerys'));
+    }
+    public function createGalery(Request $req) {
+        $namaFile = strtoupper(md5(time())).'.'.$req->image->getClientOriginalExtension();
+        $folder = '../public/galery';
+        $req->image->move($folder, $namaFile);
+        DB::table('galerys')
+            ->insert([
+                'file' => $namaFile,
+            ]);
+        return back();
+    }
+    public function deleteGalery(Request $req) {
+        unlink('../public/galery/'.$req->image);
+        DB::table('galerys')
+            ->where('id', $req->id)
+            ->delete();
+        return back();
+    }
 }

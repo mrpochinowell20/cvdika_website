@@ -32,6 +32,9 @@ Route::prefix('admin')->name('admin.')->middleware('login')->group(function() {
     Route::post('/city', [AdminController::class, 'createCity'])->name('create-city');
     Route::put('/city', [AdminController::class, 'updateCity'])->name('update-city');
     Route::delete('/city', [AdminController::class, 'deleteCity'])->name('delete-city');
+    Route::get('/galery', [AdminController::class, 'galery'])->name('galery');
+    Route::post('/galery', [AdminController::class, 'createGalery'])->name('create-galery');
+    Route::delete('/galery', [AdminController::class, 'deleteGalery'])->name('delete-galery');
 });
 
 

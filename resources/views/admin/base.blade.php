@@ -118,7 +118,7 @@
 						</li>
                         @if (Session::get('level') == 'Super Admin')
 						<li class="nav-item">
-							<a href="#">
+							<a href="{{ route('admin.galery') }}">
 								<i class="fas fa-image"></i>
 								<p>Galery</p>
 							</a>
