@@ -1,7 +1,7 @@
 @extends('admin.base')
 
 @section('title')
-    Galery
+    Galeri
 @endsection
 
 @section('main')
@@ -11,7 +11,7 @@
             <div class="row table-responsive ml-1">
                 <div class="table-responsive">
                     <div style="text-align: right" class="mb-3 pr-3">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#create">Add Galery</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#create">Tambah Gambar Galery</button>
                     </div>
                     <table id="multi-filter-select" class="display table table-striped table-hover" cellspacing="0" width="100%">
                         <thead>
@@ -28,14 +28,14 @@
                                 <td>{{ $num++ }}</td>
                                 <td><img src="../galery/{{ $galery->file }}" width="100px"></td>
                                 <td>
-                                    <button class="btn btn-link" data-toggle="modal" data-target="#delete{{ $galery->id }}">Delete</button>
+                                    <button class="btn btn-md btn-danger btn-delete" data-toggle="modal" data-target="#delete{{ $galery->id }}">Hapus</button>
                                     <div class="modal fade" id="delete{{ $galery->id }}" tabindex="-1" role="dialog" aria-labelledby="delete{{ $galery->id }}Label" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <form action="{{ route('admin.delete-galery') }}" method="post">
                                                     @method('delete')
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="delete{{ $galery->id }}Label">Delete Galery</h5>
+                                                        <h5 class="modal-title" id="delete{{ $galery->id }}Label">Hapus Gambar Galery</h5>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -46,11 +46,11 @@
                                                         <center>
                                                             <img src="../galery/{{ $galery->file }}" width="250px">
                                                         </center>
-                                                        <b>Are you sure delete this data?</b>
+                                                        <b>Apakah kamu yakin akan menghapus gambar Galery ini?</b>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                        <button type="submit" class="btn btn-danger">Hapus</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -71,7 +71,7 @@
         <div class="modal-content">
             <form action="{{ route('admin.create-galery') }}" method="post" enctype="multipart/form-data">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="createLabel">Add Galery</h5>
+                    <h5 class="modal-title" id="createLabel">Tambah Gambar Galery</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -80,8 +80,8 @@
                     <input type="file" class="form-control mb-2" placeholder="Gambar" name="image" required>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Continue</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>
         </div>

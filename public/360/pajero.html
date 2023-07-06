@@ -17,101 +17,166 @@
         }
         img {
             vertical-align: middle;
+            transition: transform 0.5s ease;
+            cursor: zoom-in;
+        }
+        .zoomed img {
+            transform: scale(2);
+            cursor: zoom-out;
         }
         .slideshow-container {
             width: 100%;
+            height: 30%;
             position: relative;
             margin: auto;
         }
+        .zoomable {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .zoomable.zoomed {
+            transform: scale(2);
+        }
     </style>
+    <script>
+        jQuery(document).ready(function(){
+
+            jQuery('#wr360PlayerId').rotator({
+                licenseFileURL: 'license.lic',
+                configFileURL: '360_assets/hyfyyhf/hyfyyhf.xml',
+                graphicsPath: 'imagerotator/html/img/basic',
+                alt: '360 degree view - hyfyyhf',
+                responsiveBaseWidth: 600,
+                responsiveMinHeight: 0,
+                googleEventTracking: false,
+            });
+
+        });
+    </script>
+
 </head>
 <body>
-    <div class="slideshow-container" onmousemove="mouseMove(event)">
-        <div class="mySlides"><img src="pajero/01.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/02.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/03.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/04.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/05.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/06.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/07.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/08.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/09.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/10.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/11.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/12.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/13.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/14.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/15.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/16.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/17.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/18.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/19.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/20.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/21.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/22.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/23.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/24.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/25.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/26.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/27.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/28.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/29.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/30.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/31.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/32.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/33.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/34.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/35.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/36.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/37.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/38.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/39.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/40.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/41.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/42.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/43.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/44.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/45.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/46.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/47.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/48.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/49.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/50.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/51.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/52.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/53.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/54.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/55.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/56.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/57.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/58.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/59.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/60.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/61.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/62.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/63.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/64.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/65.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/66.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/67.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/68.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/69.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/70.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/71.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/72.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/73.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/74.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/75.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/76.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/77.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/78.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/79.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/80.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/81.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/82.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/83.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="pajero/84.jpg" style="width:100%"></div>
+    <div class="slideshow-container" id="wr360PlayerId" onmousemove="mouseMove(event)">
+        <div class="mySlides"><img src="pajero/01.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/02.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/03.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/04.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/05.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/06.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/07.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/08.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/09.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/10.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/11.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/12.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/13.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/14.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/15.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/16.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/17.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/18.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/19.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/20.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/21.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/22.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/23.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/24.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/25.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/26.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/27.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/28.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/29.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/30.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/31.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/32.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/33.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/34.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/35.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/36.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/37.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/38.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/39.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/40.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/41.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/42.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/43.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/44.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/45.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/46.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/47.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/48.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/49.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/50.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/51.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/52.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/53.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/54.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/55.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/56.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/57.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/58.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/59.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/60.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/61.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/62.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/63.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/64.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/65.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/66.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/67.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/68.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/69.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/70.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/71.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/72.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/73.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/74.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/75.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/76.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/77.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/78.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/79.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/80.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/81.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/82.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/83.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="pajero/84.jpg" class="zoomable" style="width:100%"></div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zoomooz/1.1.6/jquery.zoomooz.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var zoomableElement = $('.zoomable');
+            var isZoomed = false;
+
+            zoomableElement.on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var offsetX = e.pageX - $(this).offset().left;
+                var offsetY = e.pageY - $(this).offset().top;
+
+                if (!isZoomed) {
+                    $(this).addClass('zoomed');
+                    $(this).css({
+                        'transform-origin': offsetX + 'px ' + offsetY + 'px',
+                    });
+                    isZoomed = true;
+                } else {
+                    $(this).removeClass('zoomed');
+                    $(this).css({
+                        'transform-origin': 'initial',
+                    });
+                    isZoomed = false;
+                }
+            });
+        });
+    </script>
+
     <script>
         var direction = "";
         var oldx = 0;
@@ -127,6 +192,13 @@
                 console.log(direction)
 
         }
+
+        function zoomImage(e) {
+            if (e.target.tagName === "IMG") {
+                e.target.classList.toggle("zoomed");
+            }
+        }
+
         let slideIndex = 1;
         showSlides(slideIndex);
         function plusSlides(n) {
@@ -148,5 +220,6 @@
             slides[slideIndex - 1].style.display = "block";
         }
     </script>
+
 </body>
 </html>

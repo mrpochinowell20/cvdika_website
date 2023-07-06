@@ -17,70 +17,119 @@
         }
         img {
             vertical-align: middle;
+            transition: transform 0.5s ease;
+            cursor: zoom-in;
+        }
+        .zoomed img {
+            transform: scale(2);
+            cursor: zoom-out;
         }
         .slideshow-container {
             width: 100%;
+            height: 30%;
             position: relative;
             margin: auto;
+        }
+        .zoomable {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .zoomable.zoomed {
+            transform: scale(2);
         }
     </style>
 </head>
 <body>
     <div class="slideshow-container" onmousemove="mouseMove(event)">
-        <div class="mySlides"><img src="avanza/01.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/02.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/03.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/04.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/05.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/06.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/07.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/08.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/09.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/10.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/11.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/12.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/13.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/14.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/15.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/16.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/17.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/18.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/19.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/20.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/21.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/22.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/23.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/24.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/25.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/26.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/27.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/28.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/29.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/30.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/31.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/32.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/33.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/34.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/35.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/36.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/37.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/38.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/39.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/40.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/41.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/42.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/43.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/44.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/45.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/46.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/47.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/48.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/49.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/50.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/51.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/52.jpeg" style="width:100%"></div>
-        <div class="mySlides"><img src="avanza/53.jpeg" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/01.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/02.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/03.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/04.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/05.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/06.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/07.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/08.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/09.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/10.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/11.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/12.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/13.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/14.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/15.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/16.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/17.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/18.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/19.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/20.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/21.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/22.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/23.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/24.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/25.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/26.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/27.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/28.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/29.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/30.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/31.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/32.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/33.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/34.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/35.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/36.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/37.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/38.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/39.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/40.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/41.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/42.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/43.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/44.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/45.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/46.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/47.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/48.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/49.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/50.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/51.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/52.jpeg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="avanza/53.jpeg" class="zoomable" style="width:100%"></div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zoomooz/1.1.6/jquery.zoomooz.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var zoomableElement = $('.zoomable');
+            var isZoomed = false;
+
+            zoomableElement.on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var offsetX = e.pageX - $(this).offset().left;
+                var offsetY = e.pageY - $(this).offset().top;
+
+                if (!isZoomed) {
+                    $(this).addClass('zoomed');
+                    $(this).css({
+                        'transform-origin': offsetX + 'px ' + offsetY + 'px',
+                    });
+                    isZoomed = true;
+                } else {
+                    $(this).removeClass('zoomed');
+                    $(this).css({
+                        'transform-origin': 'initial',
+                    });
+                    isZoomed = false;
+                }
+            });
+        });
+    </script>
+
     <script>
         var direction = "";
         var oldx = 0;

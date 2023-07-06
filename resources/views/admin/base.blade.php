@@ -24,13 +24,15 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{ asset('Atlantis/css/atlantis.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('Atlantis/css/demo.css') }}">
+    @stack('style')
 </head>
 <body>
+    @include('sweetalert::alert')
 	<div class="wrapper">
 		<div class="main-header">
 			<div class="logo-header" data-background-color="blue2">
 				<a href="{{ route('admin.dashboard') }}" class="logo" style="color: white">
-					<b>ADMIN PAGE</b>
+					<b>Halaman Admin</b>
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -121,20 +123,20 @@
 						<li class="nav-item">
 							<a href="{{ route('admin.galery') }}">
 								<i class="fas fa-image"></i>
-								<p>Galery</p>
+								<p>Galeri</p>
 							</a>
 						</li>
                         @endif
+                        <li class="nav-item">
+							<a href="{{ route('admin.in-product') }}">
+								<i class="fas fa-cart-plus"></i>
+								<p>Data Produk Masuk</p>
+							</a>
+						</li>
 						<li class="nav-item">
 							<a href="{{ route('admin.product') }}">
 								<i class="fas fa-car"></i>
 								<p>Data Produk</p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="{{ route('admin.in-product') }}">
-								<i class="fas fa-cart-plus"></i>
-								<p>Data Produk Masuk</p>
 							</a>
 						</li>
 						<li class="nav-item">
@@ -153,7 +155,7 @@
 						<li class="nav-item">
 							<a href="{{ route('admin.user-management') }}">
 								<i class="fas fa-user"></i>
-								<p>User Management</p>
+								<p>Data User</p>
 							</a>
 						</li>
                         @endif
@@ -257,7 +259,7 @@
 	</div>
 	<script src="{{ asset('Atlantis/js/core/jquery.3.2.1.min.js') }}"></script>
 	<script src="{{ asset('Atlantis/js/core/popper.min.js') }}"></script>
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	{{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 	<script src="{{ asset('Atlantis/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
 	<script src="{{ asset('Atlantis/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}"></script>
@@ -273,5 +275,6 @@
 	<script src="{{ asset('Atlantis/js/setting-demo.js') }}"></script>
 	<script src="{{ asset('Atlantis/js/demo.js') }}"></script>
 	@yield('script')
+    @stack('js')
 </body>
 </html>

@@ -17,73 +17,122 @@
         }
         img {
             vertical-align: middle;
+            transition: transform 0.5s ease;
+            cursor: zoom-in;
+        }
+        .zoomed img {
+            transform: scale(2);
+            cursor: zoom-out;
         }
         .slideshow-container {
             width: 100%;
             position: relative;
             margin: auto;
         }
+        .zoomable {
+            width: 100%;
+            height: 30%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .zoomable.zoomed {
+            transform: scale(2);
+        }
     </style>
 </head>
 <body>
     <div class="slideshow-container" onmousemove="mouseMove(event)">
-        <div class="mySlides"><img src="jazz/01.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/02.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/03.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/04.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/05.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/06.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/07.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/08.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/09.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/10.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/11.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/12.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/13.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/14.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/15.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/16.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/17.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/18.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/19.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/20.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/21.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/22.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/23.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/24.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/25.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/26.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/27.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/28.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/29.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/30.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/31.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/32.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/33.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/34.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/35.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/36.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/37.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/38.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/39.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/40.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/41.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/42.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/43.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/44.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/45.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/46.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/47.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/48.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/49.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/50.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/51.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/52.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/53.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/54.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/55.jpg" style="width:100%"></div>
-        <div class="mySlides"><img src="jazz/56.jpg" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/01.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/02.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/03.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/04.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/05.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/06.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/07.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/08.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/09.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/10.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/11.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/12.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/13.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/14.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/15.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/16.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/17.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/18.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/19.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/20.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/21.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/22.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/23.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/24.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/25.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/26.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/27.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/28.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/29.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/30.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/31.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/32.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/33.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/34.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/35.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/36.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/37.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/38.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/39.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/40.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/41.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/42.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/43.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/44.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/45.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/46.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/47.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/48.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/49.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/50.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/51.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/52.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/53.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/54.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/55.jpg" class="zoomable" style="width:100%"></div>
+        <div class="mySlides"><img src="jazz/56.jpg" class="zoomable" style="width:100%"></div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zoomooz/1.1.6/jquery.zoomooz.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var zoomableElement = $('.zoomable');
+            var isZoomed = false;
+
+            zoomableElement.on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var offsetX = e.pageX - $(this).offset().left;
+                var offsetY = e.pageY - $(this).offset().top;
+
+                if (!isZoomed) {
+                    $(this).addClass('zoomed');
+                    $(this).css({
+                        'transform-origin': offsetX + 'px ' + offsetY + 'px',
+                    });
+                    isZoomed = true;
+                } else {
+                    $(this).removeClass('zoomed');
+                    $(this).css({
+                        'transform-origin': 'initial',
+                    });
+                    isZoomed = false;
+                }
+            });
+        });
+    </script>
+
     <script>
         var direction = "";
         var oldx = 0;
