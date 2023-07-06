@@ -48,7 +48,7 @@ Dashboard
                 </div>
                 <div class="card-body">
                     <h3>
-                        {{ "Rp " . number_format($laba,2,',','.'); }}
+                        Rp {{ number_format($laba, 2, ',', '.') }}
                     </h3>
                 </div>
             </div>
@@ -61,11 +61,9 @@ Dashboard
                     <h5>Data Merk Terlaris</h5>
                 </div>
                 <div class="card-body">
-                    <center>
-                        <div style="width: 100%; height: 300px;">
-                            <canvas id="myChart"></canvas>
-                        </div>
-                    </center>
+                    <div style="width: 100%; height: 300px; display: flex; justify-content: center; align-items: center;">
+                        <canvas id="myChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
