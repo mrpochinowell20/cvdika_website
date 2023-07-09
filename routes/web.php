@@ -74,15 +74,36 @@ Route::get('products', function () {
 Route::get('products/search', function (Request $request) {
     $active = 'products';
     $searchTerm = $request->input('search');
-    // Cari produk berdasarkan nama menggunakan Query Builder
+    $startYear = $request->input('start_year');
+    $endYear = $request->input('end_year');
+    $transmisi = $request->input('transmisi');
+    $bahanBakar = $request->input('bahan_bakar');
+    $minPrice = $request->input('min_price');
+    $maxPrice = $request->input('max_price');
+    $conditions = $request->input('conditions');
+    $city = $request->input('city');
+
     $products = DB::table('products')
-        ->where('name', 'like', '%' . $searchTerm . '%')
-        ->orWhere('type', 'like', '%'.$searchTerm.'%')
-        ->orWhere('range_ori', 'like', '%'.$searchTerm.'%')
-        ->orWhere('transmisi', 'like', '%'.$searchTerm.'%')
-        ->orWhere('bahan_bakar', 'like', '%'.$searchTerm.'%')
-        ->orWhere('colour', 'like', '%'.$searchTerm.'%')
-        ->orWhere('description', 'like', '%'.$searchTerm.'%')
+        ->where(function ($query) use ($searchTerm) {
+            $query
+                ->where('name', 'like', '%' . $searchTerm . '%')
+                ->orWhere('type', 'like', '%' . $searchTerm . '%')
+                ->orWhere('range_ori', 'like', '%' . $searchTerm . '%')
+                ->orWhere('transmisi', 'like', '%' . $searchTerm . '%')
+                ->orWhere('bahan_bakar', 'like', '%' . $searchTerm . '%')
+                ->orWhere('colour', 'like', '%' . $searchTerm . '%')
+                ->orWhere('description', 'like', '%' . $searchTerm . '%');
+        })
+        ->when($startYear, function ($query, $startYear) {
+            $query->where('year', '>=', $startYear);
+        })
+        ->when($endYear, function ($query, $endYear) {
+            $query->where('year', '<=', $endYear);
+        })
+        ->where('transmisi', $transmisi)
+        ->where('bahan_bakar', $bahanBakar)
+        ->whereBetween('range_ori', [$minPrice, $maxPrice])
+        ->where('conditions', $conditions)
         ->get();
 
     return view('product_search', compact('products', 'searchTerm', 'active'));

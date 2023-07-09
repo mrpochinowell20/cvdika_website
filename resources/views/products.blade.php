@@ -63,20 +63,21 @@
         </div>
     </div><br><br><br>
 
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-12 text-center mb-3">
-                    <h3 class="text-4xl font-bold text-white-900">Pencarian</h3>
-                    <form action="{{ route('product_search') }}" method="GET">
-                        <div class="mb-2">
-                            <input type="text" class="form-control" name="search"
-                                placeholder="Masukkan merek atau nama kendaraan">
-                        </div>
-                        <div class="card-body">
+    <div class="container">
+        <div class="card bg-primary">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 text-center mb-3">
+                        <h3 class="text-4xl font-bold text-white-900">Pencarian</h3><br>
+                        <form action="{{ route('product_search') }}" method="GET">
+                            <div class="mb-2">
+                                <input type="text" class="form-control" name="search"
+                                    placeholder="Masukkan merek atau nama kendaraan">
+                            </div>
                             <div class="row">
-                                <div class="mb-2"><label for="end_year">Tahun</label>
-                                    <select name="start_year" class="form-control" required>
+                                <div class="col-md-6 mb-2">
+                                    <label for="start_year">Tahun Awal</label>
+                                    <select name="start_year" class="form-select" required>
                                         <option value="">Tahun Awal</option>
                                         <option value="1990">1990</option>
                                         <option value="1991">1991</option>
@@ -114,8 +115,9 @@
                                         <option value="2023">2023</option>
                                     </select>
                                 </div>
-                                <div class="mb-2">
-                                    <select name="end_year" class="form-control" required>
+                                <div class="col-md-6 mb-2">
+                                    <label for="end_year">Tahun Akhir</label>
+                                    <select name="end_year" class="form-select" required>
                                         <option value="">Tahun Akhir</option>
                                         <option value="1990">1990</option>
                                         <option value="1991">1991</option>
@@ -154,70 +156,67 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="mb-2">
-                            <select name="transmisi" class="form-control" required>
-                                <option value="">Transmisi</option>
-                                <option value="Manual">Manual</option>
-                                <option value="Automatic">Automatic</option>
-                                <option value="Triptonic">Triptonic</option>
-                            </select>
-                        </div>
-                        <div class="mb-2">
-                            <select name="bahan_bakar" class="form-control" required>
-                                <option value="">Bahan Bakar</option>
-                                <option value="Pertalite">Pertalite</option>
-                                <option value="Pertamax">Pertamax</option>
-                                <option value="Permina Dex">Permina Dex</option>
-                                <option value="Dexlite">Dexlite</option>
-                                <option value="Solar">Solar</option>
-                            </select>
-                        </div>
-                        <div class="card-body">
+                            <div class="mb-2">
+                                <select name="transmisi" class="form-select" required>
+                                    <option value="">Transmisi</option>
+                                    <option value="Manual">Manual</option>
+                                    <option value="Automatic">Automatic</option>
+                                    <option value="Triptonic">Triptonic</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <select name="bahan_bakar" class="form-select" required>
+                                    <option value="">Bahan Bakar</option>
+                                    <option value="Pertalite">Pertalite</option>
+                                    <option value="Pertamax">Pertamax</option>
+                                    <option value="Permina Dex">Permina Dex</option>
+                                    <option value="Dexlite">Dexlite</option>
+                                    <option value="Solar">Solar</option>
+                                </select>
+                            </div>
                             <div class="row">
-                                <div class="mb-2">
-                                    <label for="end_year">Harga</label>
+                                <div class="col-md-6 mb-2">
+                                    <label for="min_price">Dari Harga</label>
                                     <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Rp</span>
-                                        </div>
+                                        <span class="input-group-text">Rp</span>
                                         <input type="number" class="form-control" name="min_price" id="min_price"
                                             placeholder="Dari Harga" required>
                                     </div>
                                 </div>
-                                <div class="mb-2">
+                                <div class="col-md-6 mb-2">
+                                    <label for="max_price">Sampai Harga</label>
                                     <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Rp</span>
-                                        </div>
-                                        <input type="number" class="form-control" name="min_price" id="min_price"
+                                        <span class="input-group-text">Rp</span>
+                                        <input type="number" class="form-control" name="max_price" id="max_price"
                                             placeholder="Sampai Harga" required>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="mb-2">
-                            <select name="conditions" class="form-control" required>
-                                <option value="">Kondisi</option>
-                                <option value="Baru">Baru</option>
-                                <option value="Bekas">Bekas</option>
-                            </select>
-                        </div>
-                        <div class="mb-2">
-                            <select name="city" class="form-control mb-2" required>
-                                <option value="">Kota</option>
-                                @foreach ($citys as $city)
-                                    <option value="{{ $city->id }}">{{ $city->city }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <button class="btn btn-outline-primary btn-block">Cari</button>
-                    </form>
+                            <div class="mb-2">
+                                <select name="conditions" class="form-select" required>
+                                    <option value="">Kondisi</option>
+                                    <option value="Baru">Baru</option>
+                                    <option value="Bekas">Bekas</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <select name="city" class="form-select" required>
+                                    <option value="">Kota</option>
+                                    @foreach ($citys as $city)
+                                        <option value="{{ $city->id }}">{{ $city->city }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <button class="btn btn-primary btn-block">Cari</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    </div><br>
+    <br>
+
+
 
 
     <div class="col-12 text-center mb-3">
