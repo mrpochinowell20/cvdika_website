@@ -72,7 +72,9 @@ Route::get('products', function () {
 });
 
 Route::get('products/search', function (Request $request) {
+    // menyimpan aktivitas
     $active = 'products';
+    // menyimpan masing-masing parameter
     $searchTerm = $request->input('search');
     $startYear = $request->input('start_year');
     $endYear = $request->input('end_year');
@@ -83,17 +85,21 @@ Route::get('products/search', function (Request $request) {
     $conditions = $request->input('conditions');
     $city = $request->input('city');
 
+    // menggunakan query builder
     $products = DB::table('products')
+    // menambahkan kondisi pencarian
         ->where(function ($query) use ($searchTerm) {
             $query
-                ->where('name', 'like', '%' . $searchTerm . '%')
+                ->where('name', 'like', '%a' . $searchTerm . '%a')
+                // mengelompokkan beberapa kondisi untuk memenuhi kriteria pencarian
                 ->orWhere('type', 'like', '%' . $searchTerm . '%')
                 ->orWhere('range_ori', 'like', '%' . $searchTerm . '%')
                 ->orWhere('transmisi', 'like', '%' . $searchTerm . '%')
                 ->orWhere('bahan_bakar', 'like', '%' . $searchTerm . '%')
-                ->orWhere('colour', 'like', '%' . $searchTerm . '%')
                 ->orWhere('description', 'like', '%' . $searchTerm . '%');
         })
+        // when -> menambahkan kondisi jika nilai variabel diberikan tidak kosong/tidak null
+        // maka closure yg kedua akan di eksekusi
         ->when($startYear, function ($query, $startYear) {
             $query->where('year', '>=', $startYear);
         })
@@ -102,12 +108,12 @@ Route::get('products/search', function (Request $request) {
         })
         ->where('transmisi', $transmisi)
         ->where('bahan_bakar', $bahanBakar)
+        // berdasarkan rentang nilai
         ->whereBetween('range_ori', [$minPrice, $maxPrice])
         ->where('conditions', $conditions)
         ->get();
-
-    return view('product_search', compact('products', 'searchTerm', 'active'));
-})->name('product_search');
+        // menhasilkan array asosiatif -> serta nilai sesuai variabel tsb
+    return view('product_search', compact('products', 'searchTerm', 'active'));})->name('product_search');
 
 Route::get('about', function () {
     $active = 'about';

@@ -72,7 +72,7 @@
                         <form action="{{ route('product_search') }}" method="GET">
                             <div class="mb-2">
                                 <input type="text" class="form-control" name="search"
-                                    placeholder="Masukkan merek atau nama kendaraan">
+                                    placeholder="Masukkan merek atau nama kendaraan" required>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-2">
@@ -235,7 +235,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <a type="button" data-bs-toggle="modal" data-bs-target="#data_view_{{ $product->id }}">
-                                    <img src="/image/{{ $product->image }}" class="img-fluid">
+                                    <img src="/image/{{ $product->image }}" class="img-fluid zoomable-image">
                                     <h3><b><br>{{ $product->name }} {{ $product->type }}</h3></b>klik untuk detail
                                 </a>
                             </div>
@@ -563,4 +563,14 @@
             });
         });
     </script>
+
+    <style>
+        .zoomable-image {
+            transition: transform 0.3s;
+        }
+
+        .zoomable-image:hover {
+            transform: scale(1.1);
+        }
+    </style>
 @endpush

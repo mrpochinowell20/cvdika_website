@@ -22,19 +22,33 @@
     <center>
         <div class="card">
             <div class="card-body">
-        <div class="grid grid-cols-5 w-[90%] gap-2">
-            @foreach ($galerys as $galery)
-            <div class="w-full bg-[url('../galery/{{ $galery->file }}')] bg-cover">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                <div class="grid grid-cols-5 w-[90%] gap-2">
+                    @foreach ($galerys as $galery)
+                    <div class="w-full bg-[url('../galery/{{ $galery->file }}')] bg-cover zoomable-image">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    @endforeach
+                </div>
             </div>
-            @endforeach
         </div>
     </center>
+
+    <style>
+        .zoomable-image {
+            transition: transform 0.3s;
+        }
+
+        .zoomable-image:hover {
+            transform: scale(1.1);
+        }
+    </style>
+
 </center>
 @endsection
+

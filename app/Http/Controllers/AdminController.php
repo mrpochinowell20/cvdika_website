@@ -10,56 +10,85 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
+    // menggunakan query builder
         $produk = DB::table('products')
+        // select ('*') memilih semua kolom
             ->select('*')
+        // get() mengeksekusi query -> koleksi objek
             ->get();
         $produk_masuk = DB::table('products')
             ->select('*')
+        // whereNull -> kolom harus bernilai Null
             ->whereNull('date_out')
+        // menghitung jumlah baris data yang sesuai dengan kondisi yang diberikan
             ->count();
         $produk_keluar = DB::table('products')
             ->select('*')
+        // where ('!=') -> kolom harus tidak memiliki nilai yg sama dengan Null
             ->where('date_out', '!=', null)
             ->count();
         $products = DB::table('products')->select('*')->get();
+        // variable untuk menyimpan total keuntungan
         $totalProfit = 0;
 
         foreach ($products as $product) {
+        // nilai tidak kosong
             if (!empty($product->range_sold)) {
+            // $costprice -> harga beli
                 $costPrice = $product->range_ori;
+            //  $sellingpeice -> harga jual
                 $sellingPrice = $product->range_sold;
                 $profit = $sellingPrice - $costPrice;
                 $totalProfit += $profit;
             }
         }
+        // Mengassign nilai total profit ke variabel laba
         $laba = $totalProfit;
 
+        // menghitung jumlah total baris dalam tabel
+        // hasil perhitungan disimpan dlm var $riwayat_product
         $riwayat_produk = DB::table('products')
             ->select('*')
             ->count();
+
+        // data utnuk diagram grafik pie
         $dataPie = DB::table('products')
+        // berdasarkan pengelompokan name -> total
             ->select('name', DB::raw('COUNT(*) as total'))
             ->whereNotNull('date_out')
             ->groupBy('name')
+        // mengurutkan data secara menurun berdasarkan kolom ('total')
             ->orderByDesc('total')
+        // mengambil 3 data teratas setelah diurutkan
             ->limit(3)
             ->get();
 
         $data = DB::table('products')
+        // menentukan kolom yg akan dipilih dalam query
+        // fungsi 'DATE_FORMAT' untuk mengubah kolom 'create_at' menjadi format bulan/month 'YYYY-MM'
+        // memilih kolom name -> menghitung jumlah total data 'COUNT(*)'
             ->select(DB::raw("DATE_FORMAT(created_at, '%Y-%m') as month"), 'name', DB::raw('COUNT(*) as total'))
+        // kondisi untuk menfilter data hanya pada baris yang memiliki nilai tidak null pada kolom
             ->whereNotNull('date_out')
+        // mengelompokkan data -> menghasilkan hasil agregasi yang terpisah untuk setiap kombinasi bulan dan nama produk.
             ->groupBy('month', 'name')
+        // mengurutkan hasil secara ascending -> data yg ditampilkan berdasarkan bulan secara berurutan
             ->orderBy('month')
+        // Mengurutkan hasil secara descending (menurun) berdasarkan kolom "total" -> data ditampilkan dengan jumlah total terbanyak di atas.
             ->orderByDesc('total')
             ->get();
 
         $labels = $data
+        // mengambil nilai dari kolom "month" dalam setiap item dalam koleksi $data.
             ->pluck('month')
+        // menghapus nilai duplikat dari kolom 'month'
             ->unique()
+        // ->map metode untuk melakukan transformasi pada setiap elemen dlm sebuah objek/array
             ->map(function ($item) {
+                // carbon -> mengubah format menjadi format yg diinginkan (F -> nama bulan dalam huruf kapital)
                 return \Carbon\Carbon::createFromFormat('Y-m', $item)->format('F');
             });
-
+        // var untuk menyimpan data dlm bentuk array
         $datasets = [];
 
         $uniqueNames = $data->pluck('name')->unique();
